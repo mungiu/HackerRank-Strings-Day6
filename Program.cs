@@ -7,11 +7,6 @@ class Solution
 {
     static void Main(String[] args)
     {
-        /*
-        int T = Convert.ToInt32(Console.ReadLine());
-        int N = S.Length;
-        */
-        
         string S = Console.ReadLine();
         char[] charS = S.ToCharArray();
 
