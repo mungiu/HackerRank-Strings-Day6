@@ -11,67 +11,61 @@ class Solution
         int T = Convert.ToInt32(Console.ReadLine());
 
         //i need to read 2 strings and perform teh same operation on both of them
-        Console.WriteLine(FirstIndexing());
-        Console.WriteLine(SecondIndexing());
+        Indexing();
     }
 
-    static string FirstIndexing()
+    static void Indexing()
     {
         Console.WriteLine("Input 1: ");
-        string fI = Console.ReadLine();
-        char[] charfI= fI.ToCharArray();
-
-        string evenIndexed = string.Empty;
-        string oddIndexed = string.Empty;
-        StringBuilder eI = new StringBuilder();
-        StringBuilder oI = new StringBuilder();
-
-        int x = 0;
-        foreach (char j in charfI)
-        {
-            if (x % 2 == 0)
-            {
-                eI.Append(j);
-            }
-            else
-            {
-                oI.Append(j);
-            }
-            x += 1;
-        }
-        evenIndexed = eI.ToString();
-        oddIndexed = oI.ToString();
-
-        return ($"{evenIndexed}  {oddIndexed}");
-    }
-
-    static string SecondIndexing()
-    {
+        string first = Console.ReadLine();
         Console.WriteLine("Input 2: ");
-        string sI = Console.ReadLine();
-        char[] charsI = sI.ToCharArray();
+        string second = Console.ReadLine();
 
-        string evenIndexed = string.Empty;
-        string oddIndexed = string.Empty;
-        StringBuilder eI = new StringBuilder();
-        StringBuilder oI = new StringBuilder();
+        char[] charFirst= first.ToCharArray();
+        char[] charSecond = second.ToCharArray();
 
+        string evenIndexFirst = string.Empty;
+        string oddIndexFirst = string.Empty;
+        string evenIndexSecond = string.Empty;
+        string oddIndexSecond = string.Empty;
+        
+        StringBuilder eF = new StringBuilder();
+        StringBuilder oF = new StringBuilder();
         int x = 0;
-        foreach (char j in charsI)
+        foreach (char j in charFirst)
         {
             if (x % 2 == 0)
             {
-                eI.Append(j);
+                eF.Append(j);
             }
             else
             {
-                oI.Append(j);
+                oF.Append(j);
             }
             x += 1;
         }
-        evenIndexed = eI.ToString();
-        oddIndexed = oI.ToString();
+        evenIndexFirst = eF.ToString();
+        oddIndexFirst = oF.ToString();
 
-        return ($"{evenIndexed}  {oddIndexed}");
+        StringBuilder eS = new StringBuilder();
+        StringBuilder oS = new StringBuilder();
+        int y = 0;
+        foreach (char j in charSecond)
+        {
+            if (y % 2 == 0)
+            {
+                eS.Append(j);
+            }
+            else
+            {
+                oS.Append(j);
+            }
+            y += 1;
+        }
+        evenIndexSecond = eS.ToString();
+        oddIndexSecond = oS.ToString();
+
+        Console.WriteLine($"{evenIndexFirst} {oddIndexFirst}" +
+            $"\n{ evenIndexSecond} {oddIndexSecond}");
     }
 }
